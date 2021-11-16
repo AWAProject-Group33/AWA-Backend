@@ -1,0 +1,14 @@
+{
+    "configurations": [
+        {
+            "type": "java",
+            "name": "Spring Boot-AwabackendApplication<awabackend>",
+            "request": "launch",
+            "cwd": "${workspaceFolder}",
+            "console": "internalConsole",
+            "mainClass": "com.awaprojectgroup33.awabackend.AwabackendApplication",
+            "projectName": "awabackend",
+            "args": ""
+        }
+    ]
+}
