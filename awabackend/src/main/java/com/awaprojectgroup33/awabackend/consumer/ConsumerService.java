@@ -1,4 +1,4 @@
-package com.awaprojectgroup33.awabackend.db;
+package com.awaprojectgroup33.awabackend.consumer;
 
 import java.util.List;
 import java.util.Optional;

@@ -1,8 +1,9 @@
-package com.awaprojectgroup33.awabackend.db;
+package com.awaprojectgroup33.awabackend.consumer;
 
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -20,12 +21,13 @@ public class ConsumerController {
         this.consumerService = consumerService;
     }
 
+    @GetMapping
     public List<Consumer> getConsumer() {
         return consumerService.getConsumer();
     }
 
     @PostMapping
-    public void registerNewCustomer(@RequestBody Consumer consumer) {
+    public void registerNewConsumer(@RequestBody Consumer consumer) {
         consumerService.addNewConsumer(consumer);
     }
     

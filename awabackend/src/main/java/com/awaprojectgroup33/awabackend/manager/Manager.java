@@ -1,30 +1,28 @@
-package com.awaprojectgroup33.awabackend.db;
+package com.awaprojectgroup33.awabackend.manager;
 
 import javax.persistence.*;
 
-
-@Entity(name = "Consumer")
+@Entity(name = "Manager")
 @Table(
-    name = "consumer",
+    name = "manager",
     uniqueConstraints = {
-        @UniqueConstraint(name = "consumer_email_unique", columnNames = "email")
+        @UniqueConstraint(name = "manager_email_unique", columnNames = "email")
     }
 )
-public class Consumer {
-
+public class Manager {
     @Id
     @SequenceGenerator(
-        name = "consumer_sequence",
-        sequenceName = "consumer_sequence",
+        name = "manager_sequence",
+        sequenceName = "manager_sequence",
         allocationSize = 1
         
     )
     @GeneratedValue(
         strategy = GenerationType.SEQUENCE,
-        generator = "consumer_sequence"
+        generator = "manager_sequence"
     )
     @Column(
-        name = "id",
+        name = "manager_id",
         updatable = false,
         nullable = false
     )
@@ -56,12 +54,11 @@ public class Consumer {
     private String password;
 
 
-
-    public Consumer() { //empty constructor
+    public Manager() { //empty constructor
     }
 
 
-    public Consumer(String firstName, String lastName, String email, String password) {
+    public Manager(String firstName, String lastName, String email, String password) {
         this.firstName = firstName;
         this.lastName = lastName;
         this.email = email;
@@ -69,12 +66,9 @@ public class Consumer {
     }
 
 
+
     public long getId() {
         return this.id;
-    }
-
-    public void setId(long id) {
-        this.id = id;
     }
 
     public String getFirstName() {
@@ -110,29 +104,4 @@ public class Consumer {
     }
 
 
-    /*
-    public void selectConsumer() {
-
-        String url = "jdbc:postgresql://localhost/awa_database";
-        String user = "postgres";
-        String password = "secure";
-
-        try(Connection connection = DriverManager.getConnection(url, user, password)) {
-            try(Statement statement = connection.createStatement()){
-                String sql = "select * from consumer";
-                try(ResultSet result = statement.executeQuery(sql)){
-                    while(result.next()) {
-                        String fname = result.getString("first_name");
-                        long   consumer_id  = result.getlong  ("consumer_id");
-
-						System.out.println(fname);
-						System.out.println(consumer_id);
-                    }
-                }
-            }
-            connection.close();
-        } catch (SQLException e) {
-            e.printStackTrace();
-        }  
-    } */   
 }

@@ -1,4 +1,4 @@
-package com.awaprojectgroup33.awabackend.db;
+package com.awaprojectgroup33.awabackend.consumer;
 
 import java.util.List;
 
@@ -12,10 +12,10 @@ public class ConsumerConfig {
     @Bean
 		CommandLineRunner commandLineRunner(ConsumerRepository consumerRepository) {
 			return args -> {
-				Consumer donald = new Consumer("Donald", "Duck", "donald.duck@test.com", "1234");
-				Consumer bob = new Consumer("Bob", "Builder", "bob.builder@test.com", "0000");
+				//Consumer donald = new Consumer("Mat", "Madder", "mat.madder@test.com", "2222");
+				//Consumer bob = new Consumer("Pat", "Padder", "pat.padder@test.com", "3333");
 				
-                consumerRepository.saveAll(List.of(donald, bob));
+                //consumerRepository.saveAll(List.of(donald, bob));
 
 			};
 
