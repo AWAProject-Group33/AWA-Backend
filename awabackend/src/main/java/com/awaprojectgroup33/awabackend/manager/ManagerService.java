@@ -27,5 +27,9 @@ public class ManagerService {
         }
         managerRepository.save(manager);
     }
+
+    public Optional<Manager> getManagerByID(Long givenID) {
+        return managerRepository.findById(givenID);
+    }
     
 }

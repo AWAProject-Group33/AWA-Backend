@@ -1,9 +1,11 @@
 package com.awaprojectgroup33.awabackend.consumer;
 
 import java.util.List;
+import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -24,11 +26,16 @@ public class ConsumerController {
     @GetMapping
     public List<Consumer> getConsumer() {
         return consumerService.getConsumer();
-    }
+    } 
 
-    @PostMapping
+    @PostMapping("registernewconsumer")
     public void registerNewConsumer(@RequestBody Consumer consumer) {
         consumerService.addNewConsumer(consumer);
+    }
+
+    @GetMapping("{givenID}")
+    public Optional<Consumer> getConsumerById(@PathVariable Long givenID){
+        return consumerService.getConsumerByID(givenID);
     }
     
 }

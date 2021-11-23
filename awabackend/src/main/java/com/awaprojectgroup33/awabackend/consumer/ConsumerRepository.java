@@ -1,5 +1,6 @@
 package com.awaprojectgroup33.awabackend.consumer;
 
+import java.util.List;
 import java.util.Optional;
 
 import javax.transaction.Transactional;
@@ -12,10 +13,18 @@ import org.springframework.stereotype.Repository;
 @Repository
 public interface ConsumerRepository extends JpaRepository<Consumer, Long> {
 
-    //code below in SQL, "SELECT * FROM consumer WHERE email = ?"
+    //code below in SQL, "SELECT * FROM consumer WHERE email = ?",  this is used to check that the email is unique
     Optional<Consumer> findConsumerByEmail(String email);
 
-   /* final String consumerPostQuery = "INSERT ....";
+
+    //Query to find one consumer by id
+    final String getConsumerByIdQuery = "SELECT * FROM consumer WHERE consumer_id=?1";
+
+    @Query(value = getConsumerByIdQuery, nativeQuery = true)
+    Optional<Consumer> getConsumerByID(Long givenID);
+
+
+   /* final String consumerPostQuery = "INSERT into consumer (first_name, last_name, email, encrypted_password) values ('');";
 
 
     @Transactional

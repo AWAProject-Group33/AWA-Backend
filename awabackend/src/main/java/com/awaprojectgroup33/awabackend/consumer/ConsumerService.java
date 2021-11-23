@@ -31,4 +31,9 @@ public class ConsumerService {
         }
         consumerRepository.save(consumer);
     }
+
+
+    public Optional<Consumer> getConsumerByID(Long givenID) {
+        return consumerRepository.findById(givenID);
+    }
 }
