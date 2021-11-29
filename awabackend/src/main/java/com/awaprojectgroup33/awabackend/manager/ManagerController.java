@@ -23,7 +23,7 @@ public class ManagerController {
         this.managerService = managerService;
     }
 
-    @GetMapping
+    @GetMapping("all")
     public List<Manager> getManager() {
         return managerService.getManager();
     }

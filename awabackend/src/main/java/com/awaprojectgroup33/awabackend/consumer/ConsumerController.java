@@ -23,7 +23,7 @@ public class ConsumerController {
         this.consumerService = consumerService;
     }
 
-    @GetMapping
+    @GetMapping("all")
     public List<Consumer> getConsumer() {
         return consumerService.getConsumer();
     } 
