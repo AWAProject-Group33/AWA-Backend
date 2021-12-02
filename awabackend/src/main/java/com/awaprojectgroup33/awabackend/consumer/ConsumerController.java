@@ -4,6 +4,7 @@ import java.util.List;
 import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -13,6 +14,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 @RestController
 @RequestMapping(path = "api/consumer")
+@CrossOrigin
 public class ConsumerController {
 
     private final ConsumerService consumerService;
@@ -25,7 +27,8 @@ public class ConsumerController {
 
     @GetMapping("all")
     public List<Consumer> getConsumer() {
-        return consumerService.getConsumer();
+        List<Consumer> testList = consumerService.getConsumer();
+        return testList;
     } 
 
     @PostMapping("registernewconsumer")
