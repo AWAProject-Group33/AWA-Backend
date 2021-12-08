@@ -13,6 +13,8 @@ public class AwabackendApplication {
 	public static void main(String[] args) {
 		SpringApplication.run(AwabackendApplication.class, args);
 
+		
+
 		//dbConnect dbObject = new dbConnect();
 		//dbObject.connectionMethod();
 
@@ -20,6 +22,9 @@ public class AwabackendApplication {
 		//consumerObject.selectConsumer();
 
 		}
+		
+
+		
 
 /*
 		@Bean
