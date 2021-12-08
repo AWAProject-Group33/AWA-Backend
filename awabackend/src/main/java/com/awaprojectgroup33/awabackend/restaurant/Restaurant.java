@@ -2,6 +2,8 @@ package com.awaprojectgroup33.awabackend.restaurant;
 
 import javax.persistence.*;
 
+import com.awaprojectgroup33.awabackend.manager.Manager;
+
 @Entity(name = "Restaurant")
 @Table(name = "restaurant")
 
@@ -43,16 +45,18 @@ public class Restaurant {
 
     @Column(
         name = "manager_id",
-        updatable = false,
+        //updatable = false, //this should be automated and not updatable but is not atm
         nullable = false  
     )
+    
+    @JoinColumn(name = "manager_id")
     private long managerId;
 
 
     public Restaurant() {  
     }
 
-    public Restaurant(String restaurantName, String restaurantAddress, String operatingHours, String restaurantType, String priceLevel, long managerId) {
+    public Restaurant(String restaurantName, String restaurantAddress, String operatingHours, String restaurantType, String priceLevel, Long managerId ) {
         this.restaurantName = restaurantName;
         this.restaurantAddress = restaurantAddress;
         this.operatingHours = operatingHours;
@@ -107,9 +111,9 @@ public class Restaurant {
         this.priceLevel = priceLevel;
     }
 
-    public long getManagerId() {
-        return this.managerId;
-    }
+     public long getManagerId() {
+         return this.managerId;
+     }
 
     /* //cant be used cause changing id shouldn't be an option but have to figure how to automatically get manager id in restaurant
     public void setManagerId(long managerId) {

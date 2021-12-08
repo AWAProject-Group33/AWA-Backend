@@ -14,7 +14,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 @RestController
 @RequestMapping(path = "api/consumer")
-@CrossOrigin(origins = "*")
+@CrossOrigin
 public class ConsumerController {
 
     private final ConsumerService consumerService;
@@ -27,7 +27,8 @@ public class ConsumerController {
 
     @GetMapping("all")
     public List<Consumer> getConsumer() {
-        return consumerService.getConsumer();
+        List<Consumer> testList = consumerService.getConsumer();
+        return testList;
     } 
 
     @PostMapping("registernewconsumer")
