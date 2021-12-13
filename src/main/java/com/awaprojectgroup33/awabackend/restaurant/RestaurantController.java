@@ -14,7 +14,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 @RestController
 @RequestMapping(path = "api/restaurant")
-@CrossOrigin(origins = "*")
+@CrossOrigin
 public class RestaurantController {
 
     private final RestaurantService restaurantService;

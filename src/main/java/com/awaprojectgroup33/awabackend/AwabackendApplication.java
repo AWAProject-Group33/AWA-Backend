@@ -13,31 +13,6 @@ public class AwabackendApplication {
 	public static void main(String[] args) {
 		SpringApplication.run(AwabackendApplication.class, args);
 
-		
-
-		//dbConnect dbObject = new dbConnect();
-		//dbObject.connectionMethod();
-
-		//Consumer consumerObject = new Consumer();
-		//consumerObject.selectConsumer();
 
 		}
-		
-
-		
-
-/*
-		@Bean
-		CommandLineRunner commandLineRunner(ConsumerRepository consumerRepository) {
-			return args -> {
-				Consumer donald = new Consumer("Donald", "Duck", "donald.duck@test.com", "123");
-				Consumer bob = new Consumer("Bob", "Builder", "bob.builder@test.com", "000");
-				consumerRepository.save(donald);
-				consumerRepository.save(bob);
-
-			};
-
-		
-	}*/
-
 }

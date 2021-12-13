@@ -6,7 +6,6 @@ import com.awaprojectgroup33.awabackend.manager.Manager;
 
 @Entity(name = "Restaurant")
 @Table(name = "restaurant")
-
 public class Restaurant {
 
     @Id
@@ -44,11 +43,10 @@ public class Restaurant {
     private String priceLevel;
 
     @Column(
-        name = "manager_id",
+        name = "manager_id"
         //updatable = false, //this should be automated and not updatable but is not atm
-        nullable = false  
+        //nullable = false  
     )
-    
     @JoinColumn(name = "manager_id")
     private long managerId;
 
@@ -115,9 +113,9 @@ public class Restaurant {
          return this.managerId;
      }
 
-    /* //cant be used cause changing id shouldn't be an option but have to figure how to automatically get manager id in restaurant
+     //changing id shouldn't be an option but have to figure how to automatically get manager id in restaurant
     public void setManagerId(long managerId) {
         this.managerId = managerId;
     }
-    */  
+      
 }
