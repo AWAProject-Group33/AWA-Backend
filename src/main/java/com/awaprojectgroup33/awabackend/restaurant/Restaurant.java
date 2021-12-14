@@ -2,7 +2,7 @@ package com.awaprojectgroup33.awabackend.restaurant;
 
 import javax.persistence.*;
 
-import com.awaprojectgroup33.awabackend.manager.Manager;
+
 
 @Entity(name = "Restaurant")
 @Table(name = "restaurant")

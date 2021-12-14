@@ -1,14 +1,12 @@
 package com.awaprojectgroup33.awabackend.consumer;
 
-import java.util.List;
 
-import org.springframework.boot.CommandLineRunner;
-import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
 @Configuration
 public class ConsumerConfig {
 
+	/*
     @Bean
 		CommandLineRunner commandLineRunner(ConsumerRepository consumerRepository) {
 			return args -> {
@@ -20,6 +18,6 @@ public class ConsumerConfig {
 			};
 
 		
-	}
+	}*/
     
 }
